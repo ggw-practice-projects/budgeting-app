@@ -35,10 +35,10 @@ Success looks like:
 ![Successful server running in terminal](./assets/readmes/server-running.png)
 
 
-- Go to localhost:3000 to see the homepage
-- Go to localhost:3000/test to check if the database is seeded and connected.
+- Go to http://localhost:3000 to see the homepage
+- Go to http://localhost:3000/test to check if the database is seeded and connected.
 
-### Prerequisits
+### Prerequisites
 
 In order to participate in this project you must
 
