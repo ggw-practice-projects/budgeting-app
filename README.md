@@ -38,6 +38,9 @@ Success looks like:
 - Go to http://localhost:3000 to see the homepage
 - Go to http://localhost:3000/test to check if the database is seeded and connected.
 
+The test data should appear as JSON in the browser
+![test data as json in the browser](./assets/readmes/test-data-in-browser.png)
+
 ### Prerequisites
 
 In order to participate in this project you must
