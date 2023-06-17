@@ -1,0 +1,31 @@
+{
+  "name": "budgeting-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon server.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "db:init": "node ./db/schema.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ggw-practice-projects/budgeting-app.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ggw-practice-projects/budgeting-app/issues"
+  },
+  "homepage": "https://github.com/ggw-practice-projects/budgeting-app#readme",
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "sqlite3": "^5.1.6"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  }
+}
