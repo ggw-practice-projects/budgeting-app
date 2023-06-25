@@ -1,7 +1,8 @@
 const sqlite3 = require("sqlite3").verbose();
 require("dotenv").config();
 
-const DB_SOURCE = "./db" + process.env.DB_SOURCE;
+//const DB_SOURCE = "./db" + process.env.DB_SOURCE;
+const DB_SOURCE = "./budget.db";
 
 let db = new sqlite3.Database(DB_SOURCE, (err) => {
   if (err) {

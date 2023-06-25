@@ -19,11 +19,71 @@ app.get("/", (req, res) => {
 /////////////////////////////////////
 const db = require("./db/dbConfig.js");
 
-app.get("/test", async (req, res) => {
-  const query = "SELECT * FROM test";
+app.get("/user", async (req, res) => {
+  const query = "SELECT * FROM user";
   const params = [];
   try {
-    const allDays = await db.all(query, params, (error, rows) => {
+    await db.all(query, params, (error, rows) => {
+      res.json({ rows: rows, success: true });
+      if (error) {
+        console.log(error);
+      }
+    });
+  } catch (err) {
+    res.json(err);
+  }
+});
+
+app.get("/merchant", async (req, res) => {
+  const query = "SELECT * FROM merchant";
+  const params = [];
+  try {
+    await db.all(query, params, (error, rows) => {
+      res.json({ rows: rows, success: true });
+      if (error) {
+        console.log(error);
+      }
+    });
+  } catch (err) {
+    res.json(err);
+  }
+});
+
+app.get("/category", async (req, res) => {
+  const query = "SELECT * FROM category";
+  const params = [];
+  try {
+    await db.all(query, params, (error, rows) => {
+      res.json({ rows: rows, success: true });
+      if (error) {
+        console.log(error);
+      }
+    });
+  } catch (err) {
+    res.json(err);
+  }
+});
+
+app.get("/budget", async (req, res) => {
+  const query = "SELECT * FROM budget";
+  const params = [];
+  try {
+    await db.all(query, params, (error, rows) => {
+      res.json({ rows: rows, success: true });
+      if (error) {
+        console.log(error);
+      }
+    });
+  } catch (err) {
+    res.json(err);
+  }
+});
+
+app.get("/expense", async (req, res) => {
+  const query = "SELECT * FROM expense";
+  const params = [];
+  try {
+    await db.all(query, params, (error, rows) => {
       res.json({ rows: rows, success: true });
       if (error) {
         console.log(error);
@@ -35,10 +95,10 @@ app.get("/test", async (req, res) => {
 });
 
 app.get("/test/:id", async (req, res) => {
-  const query = "SELECT * FROM test WHERE id = ?";
+  const query = "SELECT * FROM user WHERE id = ?";
   const params = [req.params.id];
   try {
-    const allDays = await db.all(query, params, (error, rows) => {
+    const userID = await db.all(query, params, (error, rows) => {
       res.json({ rows: rows, success: true });
       if (error) {
         console.log(error);
