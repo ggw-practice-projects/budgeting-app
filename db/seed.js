@@ -1,4 +1,5 @@
-const md5 = require("md5");
+const bcrypt = require("bcrypt");
+const saltRounds = 10;
 
 module.exports =
   {
@@ -6,17 +7,17 @@ module.exports =
       [
         "user1",
         "user1@email.com",
-        md5("pass1"),
+        bcrypt.hashSync("pass1", saltRounds),
       ],
       [
         "user2",
         "user2@email.com",
-        md5("pass2"),
+        bcrypt.hashSync("pass2", saltRounds),
       ],
       [
         "user3",
         "user1@email.com",
-        md5("pass1")
+        bcrypt.hashSync("pass3", saltRounds),
       ]
     ],
     category: [
