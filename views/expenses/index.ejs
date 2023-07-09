@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Budget App Users index</title>
+    <link rel="stylesheet" href="styles/main.css" />
+</head>
+<body>
+    <h1>Expenses Index</h1>
+    <ul>
+        <% for (let key in expenses) { %>
+            <li>
+                <%= JSON.stringify(expenses[key]) %>
+            </li>
+          <% } %>
+
+    </ul>
+</body>
+</html>

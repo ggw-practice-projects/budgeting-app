@@ -20,10 +20,10 @@ app.get("/", (req, res) => {
 const db = require("./db/dbConfig.js");
 
 app.get("/test", async (req, res) => {
-  const query = "SELECT * FROM test";
+  const query = "SELECT * FROM user";
   const params = [];
   try {
-    const allDays = await db.all(query, params, (error, rows) => {
+    await db.all(query, params, (error, rows) => {
       res.json({ rows: rows, success: true });
       if (error) {
         console.log(error);
@@ -35,10 +35,10 @@ app.get("/test", async (req, res) => {
 });
 
 app.get("/test/:id", async (req, res) => {
-  const query = "SELECT * FROM test WHERE id = ?";
+  const query = "SELECT * FROM user WHERE id = ?";
   const params = [req.params.id];
   try {
-    const allDays = await db.all(query, params, (error, rows) => {
+    const userID = await db.all(query, params, (error, rows) => {
       res.json({ rows: rows, success: true });
       if (error) {
         console.log(error);
@@ -56,6 +56,26 @@ app.get("/test/:id", async (req, res) => {
 // Transaction routes
 const transactionsController = require("./controllers/transactionsController.js");
 app.use("/transactions", transactionsController);
+
+// User routes
+const usersController = require("./controllers/usersController.js");
+app.use("/users", usersController);
+
+//Category routes
+const categoriesController = require("./controllers/categoriesController.js");
+app.use("/categories", categoriesController)
+
+// Merchant routes
+const merchantsController = require("./controllers/merchantsController.js");
+app.use("/merchants", merchantsController)
+
+// Budget routes
+const budgetsController = require("./controllers/budgetsController.js");
+app.use("/budgets", budgetsController)
+
+// Expense routes
+const expensesController = require("./controllers/expensesController.js");
+app.use("/expenses", expensesController)
 
 // 404 Page
 
